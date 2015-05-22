@@ -10,7 +10,10 @@ $(document).ready(function(){
 
 	/*--- create new game ---*/
 	newGame();
-
+  
+  $('.new').mousedown(function() {
+    newGame();
+  });
 
 	/*--- user submit --*/
 	$("form").submit(function(event){
@@ -54,12 +57,13 @@ $(document).ready(function(){
   		guessFlag = true;
   		guessCount = 0;
   		found = false;
-  		$('ul.guessList li').remove();
+  		$('#guessList').children().remove();
   		setFeedback("Make your guess!");
   		setCount(guessCount);
   		randomNumber = generateNumber();
   		setFocus();
   		clearText();
+
       console.log("new game started");
   	}
 
